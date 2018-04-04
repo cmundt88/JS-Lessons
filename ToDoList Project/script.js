@@ -1,21 +1,33 @@
-// attempt to build a todo list according to watchandcode
+// another attempt at todo app
 
 var todoList = {
-    todos: ['item 1', 'item 2', 'item 3', 'item 4'],
-    displayList: function() {
-        console.log('List:', this.todos);
+    todos: [],
+    displayTodos: function() {
+        console.log('List:');
+        if (this.todos.length === 0) {
+            cosole.log('There are no todos in your list');
+        } else {
+            for (var i = 0; i < this.todos.length; i++) {
+                console.log(this.todos[i].itemText);
+            }
+        }
     },
-    addToList: function(newItem) {
-        this.todos.push(newItem);
-        console.log('List:', this.todos);
+    addTodos: function(newItemText) {
+        this.todos.push({
+            itemText: 'newItemText',
+            complete: false
+        });
+        this.displayTodos();
     },
-    changeList: function(position, changedItem) {
+    changeTodo: function(position, newItemText) {
         position = position - 1;
-        this.todos[position] = changedItem;
-        console.log('List:', this.todos);
+        var todo = this.todos[position];
+        todo[position].itemText = newItemText;
+        this.displayTodos();
     },
-    deleteItem: function(position, items) {
-        this.todos.splice(position, items);
-        console.log('List:', this.todos);
+    deleteTodo: function(position) {
+        position = position - 1;
+        this.todos.splice(position, 1);
+        this.displayTodos();
     }
-};
+}
