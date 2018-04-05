@@ -5,7 +5,7 @@ var todoList = {
     displayTodos: function() {
         console.log('List:');
         if (this.todos.length === 0) {
-            cosole.log('There are no todos in your list');
+            console.log('There are no todos in your list');
         } else {
             for (var i = 0; i < this.todos.length; i++) {
                 console.log(this.todos[i].itemText);
@@ -14,7 +14,7 @@ var todoList = {
     },
     addTodos: function(newItemText) {
         this.todos.push({
-            itemText: 'newItemText',
+            itemText: newItemText,
             complete: false
         });
         this.displayTodos();
@@ -22,7 +22,7 @@ var todoList = {
     changeTodo: function(position, newItemText) {
         position = position - 1;
         var todo = this.todos[position];
-        todo[position].itemText = newItemText;
+        todo.itemText = newItemText;
         this.displayTodos();
     },
     deleteTodo: function(position) {
