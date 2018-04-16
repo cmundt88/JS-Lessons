@@ -129,7 +129,9 @@ var view = {
         })
 
         addTodo.addEventListener('keydown', function(event) {
-            if (event.keyCode == 13) {
+            if (event.keyCode == 13 && event.altKey) {
+                console.log(test);
+            } else if (event.keyCode == 13) {
                 todoList.addTodos(addTodo.value);
                 view.displayTodos();
                 addTodo.value = '';
