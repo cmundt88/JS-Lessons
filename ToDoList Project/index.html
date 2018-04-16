@@ -3,11 +3,19 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
     <h1>ToDo List Project</h1>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+
+    <div>
+        <ul style="list-style-type: none"></ul>
+        <input id="addTextbox" type="text">
+        <button onclick="handlers.addTodos()">Add</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
